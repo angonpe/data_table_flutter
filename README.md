@@ -31,3 +31,5 @@ DataTable(columns: const <DataColumn>[
       ])
     ]);
 ```
+Esta tabla dará como resultado:
+![title](Images/table1.png)
