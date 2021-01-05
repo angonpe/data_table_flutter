@@ -1,16 +1,33 @@
-# my_data_table
+# Data Table
 
-A new Flutter project.
+## Introducción
+Mostrar datos en tablas es una práctica habitual para desarrolladores de aplicaciones. La información estructurada en filas y columnas ayuda a los usuarios a entenderla e interpretarla mejor.
+Flutter proporciona al desarrollador el Widget DataTable con el objetivo de simplificar esta tarea. 
 
-## Getting Started
+## A tener en cuenta
+Se recomienda la utilización de este widget cuando se tienen unas pocas filas, dado los requerimientos que tiene.
 
-This project is a starting point for a Flutter application.
+## ¿Cómo se utiliza?
+- Se añade el DataTable() Widget.
+- Se definen las columnas en la propiedad columns del widget con un array de DataColumn con tantos elementos como columnas
+- Se define las filas en la propiedad rows del widget con un array de DataRow con tantos elementos como filas.
+- En cada fila se definen las celdas en la propiedad cells del DataRow con un array de DataCells con tantos elementos como celdas tenga la fila
+### Ejemplo
+Como en tantas ocasiones la mejor forma de explicarlo es mediante un ejemplo.
+A continuación se muestra una tabla muy básica de 2 filas y 2 columnas:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+DataTable(columns: const <DataColumn>[
+      DataColumn(label: Text('Columna 1')),
+      DataColumn(label: Text('Columna 2'))
+    ], rows: const <DataRow>[
+      DataRow(cells: <DataCell>[
+        DataCell(Text('Celda 1.1')),
+        DataCell(Text('Celda 1.2'))
+      ]),
+      DataRow(cells: <DataCell>[
+        DataCell(Text('Celda 2.1')),
+        DataCell(Text('Celda 2.2'))
+      ])
+    ]);
+```
